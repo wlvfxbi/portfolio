@@ -50,14 +50,8 @@
   ::selection{ background: var(--amber); color: var(--ink); }
   a{ color: inherit; text-decoration: none; }
   button{ font-family: inherit; cursor: pointer; }
-  .display{
-    font-family:'Fraunces', serif;
-    font-weight: 900;
-    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
-    letter-spacing: -0.03em;
-    line-height: 0.9;
-  }
 
+  /* ---------- Nav ---------- */
   nav{
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -89,6 +83,7 @@
   }
   nav .links button:hover{ background: rgba(242, 169, 59, 0.15); color: var(--cream); }
 
+  /* ---------- Views ---------- */
   .view{ display: none; position: relative; z-index: 2; }
   .view.active{ display: block; animation: fadeIn 0.35s ease; }
   .view:not(#view-inicio){ padding-top: 40px; }
@@ -97,6 +92,7 @@
     to{ opacity: 1; transform: translateY(0); }
   }
 
+  /* ---------- Hero ---------- */
   #view-inicio{
     min-height: 100vh;
     display: none;
@@ -185,6 +181,7 @@
   .cta-btn .arrow{ font-size: 20px; transition: transform 0.3s; }
   .cta-btn:hover .arrow{ transform: translateX(4px); }
 
+  /* ---------- Section heads ---------- */
   .sec-head{ text-align: center; padding: 80px 6vw 20px; }
   .sec-head .kicker{
     font-family: 'Instrument Serif', serif;
@@ -213,6 +210,7 @@
     line-height: 1.6;
   }
 
+  /* ---------- Ramas overview ---------- */
   #ramas{ padding: 40px 0; }
   .branches{
     display: grid;
@@ -265,6 +263,7 @@
     margin-top: 8px;
   }
 
+  /* ---------- Branch blocks ---------- */
   .branch-block{ padding-bottom: 40px; }
 
   .folder-grid{
@@ -318,6 +317,7 @@
     opacity: 0.85;
   }
 
+  /* ---------- Modal ---------- */
   .modal-overlay{
     position: fixed; inset: 0; z-index: 200;
     background: rgba(15, 7, 4, 0.7);
@@ -474,6 +474,7 @@
     color: var(--cream);
   }
 
+  /* ---------- Sobre mí ---------- */
   #sobremi-bio{
     max-width: 1000px;
     margin: 0 auto;
@@ -569,6 +570,7 @@
   }
   .sticker:hover{ transform: rotate(-3deg) scale(1.04); }
 
+  /* ---------- Herramientas ---------- */
   #herramientas{ padding: 40px 0 80px; }
   .sticker-sheet{
     display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;
@@ -598,6 +600,7 @@
     opacity: 0.75;
   }
 
+  /* ---------- Contacto ---------- */
   #contacto-block{
     margin: 40px 6vw 80px;
     padding: 80px 6vw;
@@ -710,4 +713,481 @@
         <h3>Audiovisual</h3>
         <p>Producción en set, sonido, edición y postproducción. Mi rama principal.</p>
         <span class="branch-meta" id="count-audiovisual">06 carpetas</span>
-      </button
+      </button>
+      <button onclick="irA('transmedia')" class="branch-card">
+        <div class="branch-icon" style="background:linear-gradient(135deg,var(--wine),var(--amber));">🌌</div>
+        <h3>Transmedia</h3>
+        <p>Universos que se expanden en múltiples formatos: series, podcasts, webs, cómics.</p>
+        <span class="branch-meta" id="count-transmedia">03 carpetas</span>
+      </button>
+      <button onclick="irA('marketing')" class="branch-card">
+        <div class="branch-icon" style="background:linear-gradient(135deg,var(--olive),var(--sage));">📱</div>
+        <h3>Marketing & Redes</h3>
+        <p>Creación de contenido, manejo de redes y campañas publicitarias.</p>
+        <span class="branch-meta" id="count-marketing">02 carpetas</span>
+      </button>
+      <button onclick="irA('diseno')" class="branch-card">
+        <div class="branch-icon" style="background:linear-gradient(135deg,var(--amber),var(--lemon)); color:var(--ink);">🎨</div>
+        <h3>Diseño</h3>
+        <p>Afiches, posters y diseño gráfico para redes. En crecimiento.</p>
+        <span class="branch-meta" id="count-diseno">02 carpetas</span>
+      </button>
+    </div>
+
+    <!-- AUDIOVISUAL -->
+    <section id="audiovisual" class="branch-block">
+      <div class="sec-head">
+        <span class="kicker">rama 01</span>
+        <h2>audiovisual</h2>
+        <p class="lead">Set, cámara, sonido, edición. Lo que más hago y lo que más me representa.</p>
+      </div>
+      <div class="folder-grid" id="grid-audiovisual"></div>
+    </section>
+
+    <!-- TRANSMEDIA -->
+    <section id="transmedia" class="branch-block">
+      <div class="sec-head">
+        <span class="kicker">rama 02</span>
+        <h2>transmedia</h2>
+        <p class="lead">Universos que crecen por muchos lados a la vez.</p>
+      </div>
+      <div class="folder-grid" id="grid-transmedia"></div>
+    </section>
+
+    <!-- MARKETING -->
+    <section id="marketing" class="branch-block">
+      <div class="sec-head">
+        <span class="kicker">rama 03</span>
+        <h2>marketing & redes</h2>
+        <p class="lead">Crear, narrar y sostener una marca en redes.</p>
+      </div>
+      <div class="folder-grid" id="grid-marketing"></div>
+    </section>
+
+    <!-- DISEÑO -->
+    <section id="diseno" class="branch-block">
+      <div class="sec-head">
+        <span class="kicker">rama 04</span>
+        <h2>diseño</h2>
+        <p class="lead">Afiches y piezas gráficas para redes. Territorio en exploración.</p>
+      </div>
+      <div class="folder-grid" id="grid-diseno"></div>
+    </section>
+  </section>
+
+  <!-- ============ VISTA: SOBRE MÍ ============ -->
+  <section id="view-sobremi" class="view">
+    <div class="sec-head">
+      <span class="kicker">conóceme</span>
+      <h2>sobre mí</h2>
+      <p class="lead">Antes del trabajo, la persona.</p>
+    </div>
+
+    <div style="padding: 20px 6vw 0;">
+      <div id="sobremi-bio">
+        <div class="bio-wrap">
+          <div class="bio-photos">
+            <div class="photo-frame">
+              <div class="photo-placeholder">
+                <span class="ph-icon">📷</span>
+                <span>tu foto aquí</span>
+              </div>
+            </div>
+            <div class="photo-frame small">
+              <div class="photo-placeholder">
+                <span class="ph-icon">📷</span>
+                <span>otra foto</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bio-text">
+              <p>Nací en <span class="hl">Italia</span>, crecí en Perú. Estudio <span class="hl">Comunicación y Medios Audiovisuales</span> en la Universidad Privada del Norte, y construyo mi perfil entre el <span class="hl">set de grabación</span> y la <span class="hl">sala de edición</span>.</p>
+              <p>Me interesa el trabajo en producción —iluminación, sonido, script supervision, asistencia de dirección— tanto como la <span class="hl">edición de sonido</span> y la creación de contenido para redes, incluyendo locución.</p>
+              <p>A mediano plazo quiero especializarme en <span class="hl">ingeniería de sonido</span>. Mientras tanto, manejo el Instagram profesional de mi mamá, que es actriz en ascenso.</p>
+              <p class="hl" style="margin-top:8px;">[Aquí puedes agregar 1 o 2 párrafos más personales]</p>
+              <em class="signature">— fabi</em>
+            </div>
+
+            <div class="sticker-list">
+              <span class="sticker" style="background:var(--amber);">Iluminación</span>
+              <span class="sticker" style="background:var(--sage);">Sonido en set</span>
+              <span class="sticker" style="background:var(--lemon);">Script supervisor</span>
+              <span class="sticker" style="background:var(--orange); color:var(--cream);">Asistencia de dirección</span>
+              <span class="sticker" style="background:var(--terracotta); color:var(--cream);">Edición de sonido</span>
+              <span class="sticker" style="background:var(--olive); color:var(--cream);">Contenido y locución</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERRAMIENTAS -->
+    <section id="herramientas">
+      <div class="sec-head">
+        <span class="kicker">lo que uso</span>
+        <h2>herramientas</h2>
+      </div>
+      <div class="sticker-sheet">
+        <div class="tool-sticker" style="background:var(--amber);">Premiere<span class="lvl">avanzado</span></div>
+        <div class="tool-sticker" style="background:var(--sage);">Audition<span class="lvl">avanzado</span></div>
+        <div class="tool-sticker" style="background:var(--lemon);">Pro Tools<span class="lvl">aprendiendo</span></div>
+        <div class="tool-sticker" style="background:var(--orange); color:var(--cream);">CapCut<span class="lvl">fluido</span></div>
+        <div class="tool-sticker" style="background:var(--terracotta); color:var(--cream);">Illustrator<span class="lvl">básico</span></div>
+        <div class="tool-sticker" style="background:var(--olive); color:var(--cream);">Photoshop<span class="lvl">en práctica</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <div id="contacto-block">
+      <h2>hablemos</h2>
+      <p class="lead">Estoy abierta a colaborar en producción, set y postproducción de sonido. Escríbeme.</p>
+      <div class="contact-links">
+        <a href="mailto:wlvfxbi@gmail.com">✉️ Correo</a>
+        <a href="https://www.instagram.com/wlvfxbi/" target="_blank" rel="noopener">📷 Instagram</a>
+        <a href="https://www.linkedin.com/in/wlvfxbi" target="_blank" rel="noopener">💼 LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>fabi — portafolio <span id="year"></span></footer>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============ NAVEGACIÓN ============ */
+  function irA(id){
+    if (id === 'inicio' || id === 'ramas' || id === 'sobremi') {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      const vista = document.getElementById('view-' + id);
+      if (vista) vista.classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      return;
+    }
+    if (id === 'contacto') {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      const vista = document.getElementById('view-sobremi');
+      if (vista) vista.classList.add('active');
+      setTimeout(() => {
+        const bloque = document.getElementById('contacto-block');
+        if (bloque) bloque.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 100);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  /* ============ DATOS ============ */
+  const categories = [
+    /* AUDIOVISUAL */
+    { id: 'documentales', branch: 'audiovisual', title: 'Documentales', icon: '📹',
+      cover: 'linear-gradient(135deg, #7A1F1F, #C4512D)', items: [] },
+    { id: 'series', branch: 'audiovisual', title: 'Series & Miniseries', icon: '🎞️',
+      cover: 'linear-gradient(135deg, #C4512D, #E8752E)',
+      items: [
+        { title: 'Producción con A13', badge: 'Serie / miniserie', badgeColor: '#C4512D', icon: '🎞️',
+          cover: 'linear-gradient(135deg, #C4512D, #E8752E)',
+          description: '[Descripción breve.]', role: '[Tu rol.]', represents: '[Qué significa.]' }
+      ]
+    },
+    { id: 'cortometrajes', branch: 'audiovisual', title: 'Cortometrajes', icon: '🎬',
+      cover: 'linear-gradient(135deg, #A03A20, #7A1F1F)',
+      items: [
+        { title: 'Cartas a nadie', badge: 'Cortometraje · 2025', badgeColor: '#A03A20', icon: '🎬',
+          cover: 'linear-gradient(135deg, #A03A20, #7A1F1F)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: '6n3TmhsnNR4' },
+        { title: 'Game Over', badge: 'Cortometraje', badgeColor: '#7A1F1F', icon: '🎮',
+          cover: 'linear-gradient(135deg, #7A1F1F, #C4512D)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: '-JWNOjZFgbw' },
+        { title: 'Game Over — Trailer', badge: 'Trailer', badgeColor: '#A03A20', icon: '🎞️',
+          cover: 'linear-gradient(135deg, #C4512D, #E8752E)',
+          description: 'Trailer del corto Game Over. Editado por mí.',
+          role: 'Edición del trailer.',
+          represents: 'Cortito pero mío. Mi primer ejercicio de montaje con timing cómico.',
+          videoId: 'WbWjvoVqw5A' },
+        { title: 'Latidos Distantes', badge: 'Cortometraje · curso de Fotografía', badgeColor: '#A03A20', icon: '🎬',
+          cover: 'linear-gradient(135deg, #A03A20, #7A1F1F)',
+          description: '[Descripción.]', role: 'Actuación y colaboración en el guion.',
+          represents: 'Actué aquí con mi mejor amiga. Me da vergüenza pero le tengo cariño.',
+          videoId: 'jXmakajGZZI' }
+      ]
+    },
+    { id: 'spots', branch: 'audiovisual', title: 'Spots', icon: '🎥',
+      cover: 'linear-gradient(135deg, #E8752E, #F2A93B)',
+      items: [
+        { title: 'Abriendo puertas, cerrando prejuicios', badge: 'Spot universitario', badgeColor: '#E8752E', icon: '🎥',
+          cover: 'linear-gradient(135deg, #E8752E, #F2A93B)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: 'dwisjbilmos' }
+      ]
+    },
+    { id: 'musicales', branch: 'audiovisual', title: 'Videos Musicales', icon: '🎵',
+      cover: 'linear-gradient(135deg, #F2A93B, #E8752E)', items: [] },
+    { id: 'magazine', branch: 'audiovisual', title: 'Magazine', icon: '📰',
+      cover: 'linear-gradient(135deg, #7A1F1F, #F2A93B)',
+      items: [
+        { title: 'Grimorium', badge: 'Magazine · 2026', badgeColor: '#7A1F1F', icon: '📰',
+          cover: 'linear-gradient(135deg, #7A1F1F, #F2A93B)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: '0t4QqjJF6zE' }
+      ]
+    },
+
+    /* TRANSMEDIA */
+    { id: 'lumineux', branch: 'transmedia', title: 'Universo Lumineux', icon: '✨',
+      cover: 'linear-gradient(135deg, #7A1F1F, #F2A93B)',
+      items: [
+        { title: 'Lumineux — Trailer de la película', badge: 'Transmedia · Producto principal', badgeColor: '#7A1F1F', icon: '🎬',
+          cover: 'linear-gradient(135deg, #7A1F1F, #F2A93B)',
+          description: 'Trailer del producto principal del universo Lumineux.',
+          role: '[Tu rol.]',
+          represents: 'Mi primer proyecto transmedia. El que más cariño le tengo.',
+          videoId: 'LhAye0gJ4Zc' },
+        { title: 'Lumineux — Trailer transmedia', badge: 'Transmedia · Universo completo', badgeColor: '#C4512D', icon: '🌌',
+          cover: 'linear-gradient(135deg, #C4512D, #F5E6A8)',
+          description: 'Trailer que presenta el universo completo.',
+          role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: '2RBsJqtd_cY' },
+        { title: 'Sombras de Luminoria — Trailer del cómic', badge: 'Transmedia · Cómic', badgeColor: '#7A1F1F', icon: '📖',
+          cover: 'linear-gradient(135deg, #2A130A, #7A1F1F)',
+          description: 'Trailer del cómic del universo Lumineux.',
+          role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: 'tgD4Z3G8XHM' },
+        { title: 'Ecos del bosque: relatos de las Lumineux', badge: 'Transmedia · Producto sonoro', badgeColor: '#6B7A3A', icon: '🎧',
+          cover: 'linear-gradient(135deg, #6B7A3A, #A8B07C)',
+          description: 'Producto sonoro del universo. 100% mío: guion, locución y edición.',
+          role: 'Guion, narración/locución y edición.',
+          represents: 'Completamente mío de principio a fin. Aquí me di cuenta de que quiero dedicarme al sonido.',
+          videoId: 'CtqSBdkj5v0' },
+        { title: 'Web del universo Lumineux', badge: 'Transmedia · Web', badgeColor: '#A03A20', icon: '🌐',
+          cover: 'linear-gradient(135deg, #2A130A, #C4512D)',
+          description: 'Sitio web del universo Lumineux (Dreamscape Films).',
+          role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'https://dreamscapefilmssss.wixsite.com/luminoria',
+          externalLabel: 'Visitar la web de Lumineux' }
+      ]
+    },
+    { id: 'demogracia', branch: 'transmedia', title: 'Universo Demogracia', icon: '🗳️',
+      cover: 'linear-gradient(135deg, #A03A20, #F2A93B)',
+      items: [
+        { title: 'Demogracia — Episodio 1', badge: 'Transmedia · Miniserie', badgeColor: '#A03A20', icon: '🎞️',
+          cover: 'linear-gradient(135deg, #A03A20, #F2A93B)',
+          description: 'Capítulo 1 de la miniserie Demogracia, producto principal del universo.',
+          role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: 'TT_A2CyF31s' },
+        { title: 'Demogracia — Episodio 2', badge: 'Transmedia · Miniserie', badgeColor: '#A03A20', icon: '🎞️',
+          cover: 'linear-gradient(135deg, #A03A20, #F2A93B)',
+          description: 'Capítulo 2 de la miniserie Demogracia.',
+          role: '[Tu rol.]', represents: '[Qué significa.]',
+          videoId: '8R6gDa-md8U' },
+        { title: 'Expertos en nada', badge: 'Transmedia · Podcast', badgeColor: '#6B7A3A', icon: '🎙️',
+          cover: 'linear-gradient(135deg, #6B7A3A, #C4512D)',
+          description: 'Podcast de 3 episodios del universo Demogracia. Edité el ep 2 y supervisé/aprobé la edición de los 3.',
+          role: 'Edición del ep 2 y supervisión de la edición final de los 3.',
+          represents: 'Mi primer rol de liderazgo real en sonido. Entendí que la supervisión también es creación.',
+          spotifyEpisodeId: '22tR8rfqHv79R49RTFhNhe',
+          externalUrl: 'https://open.spotify.com/show/033z8SlZwPqwydHTXY6V3h',
+          externalLabel: 'Escuchar los 3 episodios en Spotify' },
+        { title: 'Demogracia — Instagram', badge: 'Transmedia · Redes', badgeColor: '#C4512D', icon: '📱',
+          cover: 'linear-gradient(135deg, #F2A93B, #C4512D)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_EL_INSTAGRAM', externalLabel: 'Ver Instagram de Demogracia' },
+        { title: 'Demogracia — Web', badge: 'Transmedia · Web', badgeColor: '#A03A20', icon: '🌐',
+          cover: 'linear-gradient(135deg, #2A130A, #C4512D)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_LA_WEB', externalLabel: 'Visitar la web' }
+      ]
+    },
+    { id: 'daske', branch: 'transmedia', title: 'Documental Daske Gaitán', icon: '🎙️',
+      cover: 'linear-gradient(135deg, #6B7A3A, #C4512D)',
+      items: [
+        { title: 'Daske Gaitán — Documental', badge: 'Transmedia · Producto principal', badgeColor: '#6B7A3A', icon: '🎬',
+          cover: 'linear-gradient(135deg, #6B7A3A, #C4512D)',
+          description: 'Documental sobre Daske Gaitán, mi primo. Proyecto de curso universitario.',
+          role: '[Tu rol.]', represents: 'Trabajar con mi primo le dio un cuidado distinto a la historia.',
+          videoId: 'PEGA_AQUI_EL_ID_DEL_DOCUMENTAL' },
+        { title: 'Daske Gaitán — Instagram', badge: 'Transmedia · Redes', badgeColor: '#C4512D', icon: '📱',
+          cover: 'linear-gradient(135deg, #C4512D, #A8B07C)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_EL_INSTAGRAM', externalLabel: 'Ver Instagram' },
+        { title: 'Daske Gaitán — Podcast', badge: 'Transmedia · Podcast', badgeColor: '#6B7A3A', icon: '🎙️',
+          cover: 'linear-gradient(135deg, #6B7A3A, #C4512D)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_EL_PODCAST', externalLabel: 'Escuchar podcast' },
+        { title: 'Daske Gaitán — Juego IA', badge: 'Transmedia · Juego generativo', badgeColor: '#7A1F1F', icon: '🎮',
+          cover: 'linear-gradient(135deg, #7A1F1F, #F2A93B)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_EL_JUEGO', externalLabel: 'Ver el juego' },
+        { title: 'Daske Gaitán — Web', badge: 'Transmedia · Web', badgeColor: '#A03A20', icon: '🌐',
+          cover: 'linear-gradient(135deg, #2A130A, #C4512D)',
+          description: '[Descripción.]', role: '[Tu rol.]', represents: '[Qué significa.]',
+          externalUrl: 'PEGA_AQUI_LA_WEB', externalLabel: 'Visitar web' }
+      ]
+    },
+
+    /* MARKETING */
+    { id: 'redes', branch: 'marketing', title: 'Contenido para Redes', icon: '📱',
+      cover: 'linear-gradient(135deg, #6B7A3A, #A8B07C)',
+      items: [
+        { title: 'Instagram de mi mamá (actriz)', badge: 'Gestión de marca personal', badgeColor: '#6B7A3A', icon: '📱',
+          cover: 'linear-gradient(135deg, #6B7A3A, #A8B07C)',
+          description: 'Manejo del Instagram profesional de mi mamá, actriz en ascenso.',
+          role: 'Estrategia de contenido, grabación, edición y community management.',
+          represents: 'Me enseñó a traducir una identidad artística en contenido constante.' }
+      ]
+    },
+    { id: 'campanas', branch: 'marketing', title: 'Campañas Publicitarias', icon: '📣',
+      cover: 'linear-gradient(135deg, #F2A93B, #C4512D)',
+      items: [
+        { title: 'Nescafé', badge: 'Campaña transmedia · NORU', badgeColor: '#E8752E', icon: '☕',
+          cover: 'linear-gradient(135deg, #F2A93B, #C4512D)',
+          description: 'Campaña transmedia desarrollada con NORU.',
+          role: '[Tu rol y piezas.]', represents: '[Qué significa.]' }
+      ]
+    },
+
+    /* DISEÑO */
+    { id: 'afiches', branch: 'diseno', title: 'Afiches & Posters', icon: '🖼️',
+      cover: 'linear-gradient(135deg, #A8B07C, #6B7A3A)', items: [] },
+    { id: 'diseno-redes', branch: 'diseno', title: 'Diseño para Redes', icon: '🎨',
+      cover: 'linear-gradient(135deg, #F5E6A8, #A8B07C)', items: [] }
+  ];
+
+  /* ============ RENDER CARPETAS ============ */
+  function renderFolders(branchId, gridId){
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    const folders = categories.filter(c => c.branch === branchId);
+    grid.innerHTML = folders.map(cat => `
+      <button class="folder-card" onclick="openCategory('${cat.id}')">
+        <div class="folder-cover" style="background:${cat.cover};">${cat.icon}</div>
+        <div class="folder-title">${cat.title}</div>
+        <div class="folder-count">${cat.items.length} proyecto${cat.items.length === 1 ? '' : 's'}</div>
+      </button>
+    `).join('');
+  }
+  renderFolders('audiovisual', 'grid-audiovisual');
+  renderFolders('transmedia', 'grid-transmedia');
+  renderFolders('marketing', 'grid-marketing');
+  renderFolders('diseno', 'grid-diseno');
+
+  function updateBranchCounts(){
+    ['audiovisual','transmedia','marketing','diseno'].forEach(branch => {
+      const count = categories.filter(c => c.branch === branch).length;
+      const el = document.getElementById('count-' + branch);
+      if (el) el.textContent = String(count).padStart(2, '0') + ' carpetas';
+    });
+  }
+  updateBranchCounts();
+
+  /* ============ MODAL ============ */
+  const overlay = document.getElementById('modal-overlay');
+  const modalContent = document.getElementById('modal-content');
+  let lastFocused = null;
+
+  function openModal(){
+    lastFocused = document.activeElement;
+    overlay.classList.add('open');
+    document.getElementById('modal-close').focus();
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeydown);
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    modalContent.innerHTML = '';
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+  function onKeydown(e){ if (e.key === 'Escape') closeModal(); }
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+  function openCategory(categoryId){
+    const category = categories.find(c => c.id === categoryId);
+    let itemsHtml;
+    if (category.items.length === 0){
+      itemsHtml = '<div class="board-empty">Aún no hay proyectos en esta carpeta. Vuelve pronto ✦</div>';
+    } else {
+      itemsHtml = '<div class="board-grid">' + category.items.map((item, i) => `
+        <button class="board-item" onclick="openItem('${category.id}', ${i})">
+          <div class="board-item-cover" style="background:${item.cover};">${item.icon}</div>
+          <div class="board-item-body">
+            <div class="board-item-title">${item.title}</div>
+            <span class="board-item-badge" style="background:${item.badgeColor};">${item.badge}</span>
+          </div>
+        </button>
+      `).join('') + '</div>';
+    }
+    modalContent.innerHTML = `
+      <button class="modal-back" onclick="closeModal()">← cerrar</button>
+      <div class="modal-kicker">${category.icon} carpeta</div>
+      <h3 class="modal-title">${category.title}</h3>
+      ${itemsHtml}
+    `;
+    openModal();
+  }
+
+  function openItem(categoryId, index){
+    const category = categories.find(c => c.id === categoryId);
+    const item = category.items[index];
+    let media;
+
+    if (item.videoId && !item.videoId.startsWith('PEGA')){
+      media = `<div class="detail-media detail-video-wrap">
+        <iframe src="https://www.youtube.com/embed/${item.videoId}" title="${item.title}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>`;
+    } else if (item.spotifyEpisodeId){
+      media = `<div class="detail-media" style="border-radius:12px; overflow:hidden; margin-bottom:14px;">
+          <iframe style="width:100%; display:block; border:0;"
+            src="https://open.spotify.com/embed/episode/${item.spotifyEpisodeId}"
+            height="232" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            title="${item.title}"></iframe>
+        </div>
+        ${item.externalUrl ? `<a href="${item.externalUrl}" target="_blank" rel="noopener" class="spotify-fallback-btn">▶ ${item.externalLabel || 'Escuchar en Spotify'}</a>` : ''}`;
+    } else if (item.image){
+      media = `<div class="detail-media"><img src="${item.image}" alt="${item.title}" style="width:100%; display:block;"></div>`;
+    } else if (item.externalUrl && item.externalUrl.startsWith('http')){
+      media = `<div class="detail-media detail-cover-static" style="background:${item.cover}; flex-direction:column; gap:14px;">
+          <div style="font-size:56px;">${item.icon}</div>
+          <a href="${item.externalUrl}" target="_blank" rel="noopener"
+            style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700;
+            background:var(--cream); color:var(--terracotta); padding:12px 22px; border-radius:100px;
+            text-decoration:none; box-shadow:0 4px 0 rgba(42,19,10,0.25);">
+            ▶ ${item.externalLabel || 'Abrir enlace'}
+          </a>
+        </div>`;
+    } else {
+      media = `<div class="detail-media detail-cover-static" style="background:${item.cover};">${item.icon}</div>`;
+    }
+
+    modalContent.innerHTML = `
+      <button class="modal-back" onclick="openCategory('${category.id}')">← volver a ${category.title}</button>
+      ${media}
+      <span class="detail-badge" style="background:${item.badgeColor};">${item.badge}</span>
+      <h3 class="modal-title" style="margin-top:6px;">${item.title}</h3>
+      <p class="detail-desc">${item.description}</p>
+      <p class="detail-role"><b>Mi rol:</b> ${item.role}</p>
+      ${item.represents ? `<p class="detail-rep">${item.represents}</p>` : ''}
+    `;
+  }
+</script>
+
+</body>
+</html>
